@@ -1,0 +1,10 @@
+
+@for $i from 1 through 10 {
+	@each $type  in margin, padding {
+		@each $direction in left, right, top, bottom {
+			.#{$type}-#{$direction}-#{$i*10} {
+				#{$type}-#{$direction}: $i*10px;
+			} 
+		}
+	}
+}

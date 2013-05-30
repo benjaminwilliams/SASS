@@ -1,17 +1,9 @@
-
-@for $i from 1 through 5 {
-	@each $type  in margin, padding {
-		@each $direction in left, right, top, bottom {
-			.#{$type}-#{$direction}-#{$i*10} {
-				#{$type}-#{$direction}: $i*10px;
-			} 
-		}
+@mixin gradient($dir, $R1, $G1, $B1, $A1, $R2, $G2, $B2, $A2) {
+	@if ($dir == 'up') {
+		$R3:$R1; $G3:$G1; $B3:$B1; $A3:$A1; //swap first colour with second
+		$R1:$R2; $G1:$G2; $B1:$B2; $A1:$A2;
+		$R2:$R3; $G2:$G3; $B2:$B3; $A2:$A3;
 	}
-}
-
-
-
-@mixin gradient-vert-2($R1, $G1, $B1, $A1, $R2, $G2, $B2, $A2) {
 	background: rgba($R1, $G1, $B1, $A1);
 	background: -moz-linear-gradient(top, rgba($R1, $G1, $B1, $A1), (rgba($R2, $G2, $B2, $A2) 100%)); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($R1, $G1, $B1, $A1)), color-stop(100%,(rgba($R2, $G2, $B2, $A2)))); /* Chrome,Safari4+ */

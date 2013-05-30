@@ -1,4 +1,4 @@
-@mixin arrow($size, $dir, $color, $border-width, $border-color){
+@mixin arrow($size, $pos, $color, $border-width, $border-color){
 	position: relative;
 	&:after {
 		bottom: 100%;
@@ -22,7 +22,7 @@
 			border-width: ($size + $border-width);	
 		}
 	}
-	@if ($dir == "top") {
+	@if ($pos == "top") {
 		&:after {
 			border-bottom-color: $color;
 			left: 50%;
@@ -35,7 +35,7 @@
 				left: 50%;
 			}
 		}
-	}@else if ($dir == "bottom") {
+	}@else if ($pos == "bottom") {
 		&:after {
 			border-top-color: $color;
 			left: 50%;
@@ -50,7 +50,7 @@
 				top: 100%;
 			}
 		}
-	}@else if ($dir == "left") {
+	}@else if ($pos == "left") {
 		&:after {
 			border-right-color: $color;
 			left: 0%;
@@ -67,7 +67,7 @@
 				margin-top: -($size + $border-width);
 			}
 		}
-	}@else if ($dir == "right") {
+	}@else if ($pos == "right") {
 		&:after {
 			border-left-color: $color;
 			left: 100%;

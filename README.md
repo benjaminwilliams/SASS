@@ -5,7 +5,7 @@ _arrows.scss
 ---------------------
 Allows you to place a css arrow easily onto an element.
 
-# Basic syntax
+#### Basic syntax
 
 `@include arrow($size, $dir, $color, $border-width, $border-color);`
 
@@ -16,7 +16,7 @@ Allows you to place a css arrow easily onto an element.
 	$border-color - border colour (use 0 for no border)
 
 
-# Examples 
+#### Examples 
 
 @include arrow(15px, left, #999, 2, #444);
 
@@ -27,7 +27,7 @@ _helpers.scss
 ---------------------
 Adds padding and margin helpers in each direction between 10px and 50px (in 10px incriments)
 
-# Examples
+#### Examples
 
 	.margin-top-10 
 	.margin-right-30
